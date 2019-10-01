@@ -1,9 +1,10 @@
-package com.akka.actors;
+package com.akka;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSelection;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import com.akka.actors.MultiServiceActor;
 import com.akka.messages.FindAddressReqMessage;
 
 /**
