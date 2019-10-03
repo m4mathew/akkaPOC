@@ -15,7 +15,7 @@ public class AkkaBecomeTest {
         ActorSystem system = ActorSystem.create("MyAkkaSystem");
         // create the listener
         final ActorRef service = system.actorOf(Props.create(MultiServiceActor.class),"serviceActor");
-       service.tell("service1",ActorRef.noSender());
+        service.tell("service1",ActorRef.noSender());
         service.tell("service1",ActorRef.noSender());
     }
 }
