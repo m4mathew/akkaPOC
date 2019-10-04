@@ -1,6 +1,7 @@
 package com.akka;
 
 
+
 import java.util.concurrent.CompletableFuture;
 
 public class CompletableFutureTest {
@@ -11,7 +12,14 @@ public class CompletableFutureTest {
             task(completableFuture);
             //after calling task() the next step(sysout) is executed. Once tast() is completed result will be available in completableFuture.get()
             System.out.println("Go to Task 2");
-            System.out.println("Task 1 Completed :: result= " + completableFuture.get());
+
+            //thenApply and thenAccept
+            completableFuture.thenApply(x -> x.toLowerCase()).thenAccept(x -> {
+                try {
+                    System.out.println(x);
+                }catch (Exception e){}
+            });
+
 
         }catch (Exception e){
 
@@ -23,5 +31,7 @@ public class CompletableFutureTest {
         //completes the completableFuture.
         completableFuture.complete("Task 1 Result");
     }
+
+
 
 }
